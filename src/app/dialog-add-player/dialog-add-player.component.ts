@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatDialog, MatDialogClose } from '@angular/material/dialog';
+import { MatDialogRef, MatDialogClose } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -25,10 +25,12 @@ import { FormsModule } from '@angular/forms';
 export class DialogAddPlayerComponent {
   name: string = '';
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialogRef: MatDialogRef<DialogAddPlayerComponent>
+    ) { }
+    
 
-  onNoClick(): void { }
-
-
-
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }
