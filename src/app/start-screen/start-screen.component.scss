@@ -1,0 +1,40 @@
+.start-screen {
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >img {
+        height: 40%;
+        width: 90%;
+        object-fit: contain;
+    }
+
+    >h1 {
+        color: #fff;
+        font-size: 5.5rem;
+    }
+}
+
+.start-btn {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    height: auto;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+
+    &:hover {
+        background-color: #d31d1d;
+        color: #ffffff;
+        cursor: pointer;
+    }
+}
