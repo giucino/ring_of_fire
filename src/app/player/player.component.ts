@@ -12,6 +12,7 @@ export class PlayerComponent implements OnInit {
 
   @Input() name!: string;
   @Input() playerActive: boolean = false;
+  @Input() playerImage!: string;
 
   constructor() { }
 

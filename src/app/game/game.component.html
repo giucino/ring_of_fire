@@ -1,7 +1,12 @@
-<app-player *ngFor="let player of game.players; let i = index;" [ngStyle]="{'top.px': 50 + (i * 65)}" [name]="player"
-    [playerActive]="i == game.currentPlayer" class="player-position"></app-player>
+<app-player (click)="editPlayer(i)" *ngFor="let player of game.players; let i = index;"
+    [ngStyle]="{'top.px': 50 + (i * 65)}" [playerActive]="i == game.currentPlayer" [playerImage]="game.playerImages[i]"
+    [name]="player" class="player-position hide-desktop"></app-player>
 
-<div class="field">
+<div class="game-over" *ngIf="gameOver">
+    <img src="./../../assets/img/game_over.png" />
+</div>
+
+<div *ngIf="!gameOver" class="field">
     <div class="card-stack">
         <!-- Card stack -->
         <img *ngFor="let c of [0, 1, 2, 3]; let i = index;" [ngStyle]="{'right.px': i * 5}"
@@ -15,13 +20,13 @@
             src="assets/img/playing_cards-master/{{ card }}.png" alt="">
 
         <!-- Current card animation -->
-        <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card" style="right: 25px"
-            src="assets/img/playing_cards-master/{{ currentCard }}.png" alt="">
+        <img (click)="takeCard()" *ngIf="game.pickCardAnimation" class="pick-card" style="right: 25px"
+            src="assets/img/playing_cards-master/{{ game.currentCard }}.png" alt="">
 
     </div>
 </div>
 
-<app-game-rules [card]="currentCard" class="pin-bottom"></app-game-rules>
+<app-game-rules [card]="game.currentCard" class="pin-bottom"></app-game-rules>
 
 
 <button mat-fab color="baseline" (click)="openDialog()" class="btn-add">

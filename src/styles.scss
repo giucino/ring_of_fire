@@ -7,6 +7,17 @@ body {
     font-family: 'Open sans', sans-serif;
 }
 
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// @media screen and (max-width: 768px) {
+//     .hide-desktop {
+//         display: none;
+//     }
+// }
+
+@media screen and (min-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+}

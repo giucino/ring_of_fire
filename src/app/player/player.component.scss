@@ -7,10 +7,14 @@
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     padding: 4px;
+    overflow: hidden;
 
     span {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         margin-right: 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     img {
